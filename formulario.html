@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Evaluación de Jugadores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        select, input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Formulario de Evaluación de Jugadores</h1>
+        <form action="https://script.google.com/macros/s/AKfycbzkTNsdqyXOA5NZgaOnxVJMrsk7d-_YRHujawtwz-NbSgLRrXde2lOy9Ku4HSRMnZ5R/exec" method="POST">
+            
+            <!-- Pregunta 1: Categoría del jugador -->
+            <div class="question">
+                <label for="categoria">Categoría del jugador:</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="4ta">4ta</option>
+                    <option value="5ta">5ta</option>
+                    <option value="6ta">6ta</option>
+                </select>
+            </div>
+            
+            <!-- Pregunta 2: Qué equipo es -->
+            <div class="question">
+                <label for="equipo">¿Qué equipo es?</label>
+                <select id="equipo" name="equipo" required>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                </select>
+            </div>
+            
+            <!-- Pregunta 3: Nombre del jugador -->
+            <div class="question">
+                <label for="nombre">Nombre del jugador:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            
+            <!-- Pregunta 4: Minuto de Ingreso al partido -->
+            <div class="question">
+                <label for="ingreso">Minuto de Ingreso al partido:</label>
+                <input type="number" id="ingreso" name="ingreso" min="1" required>
+            </div>
+            
+            <!-- Pregunta 5: Minuto de salida -->
+            <div class="question">
+                <label for="salida">Minuto de salida:</label>
+                <input type="number" id="salida" name="salida" min="1" required>
+            </div>
+            
+            <!-- Pregunta 6: Performance General -->
+            <div class="question">
+                <label for="performance">Performance General (Del 1 al 5):</label><br>
+                <input type="radio" id="performance1" name="performance" value="1" required> 1
+                <input type="radio" id="performance2" name="performance" value="2"> 2
+                <input type="radio" id="performance3" name="performance" value="3"> 3
+                <input type="radio" id="performance4" name="performance" value="4"> 4
+                <input type="radio" id="performance5" name="performance" value="5"> 5
+            </div>
+            
+            <!-- Pregunta 7: Cantidad de goles -->
+            <div class="question">
+                <label for="goles">Cantidad de goles:</label>
+                <input type="number" id="goles" name="goles" min="0" required>
+            </div>
+            
+            <!-- Pregunta 8: Tarjetas -->
+            <div class="question">
+                <label for="tarjetas">Tarjetas:</label><br>
+                <input type="radio" id="tarjetas1" name="tarjetas" value="Ninguna" required> Ninguna
+                <input type="radio" id="tarjetas2" name="tarjetas" value="Amarilla"> Amarilla
+                <input type="radio" id="tarjetas3" name="tarjetas" value="Doble Amarilla"> Doble Amarilla
+                <input type="radio" id="tarjetas4" name="tarjetas" value="Roja"> Roja
+            </div>
+            
+            <!-- Pregunta 9: Comentarios -->
+            <div class="question">
+                <label for="comentarios">Comentarios:</label>
+                <textarea id="comentarios" name="comentarios" rows="4" required></textarea>
+            </div>
+            
+            <!-- Botón de enviar -->
+            <input type="submit" class="button" value="Enviar">
+        </form>
+    </div>
+
+</body>
+</html>
